@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<link rel="icon" href="/images/logo.png">
+    <title>Kinemap | Home</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  color: #C1B846;
+  background-position:center;
+background-repeat:no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+::selection{
+background-color:#49E038;
+color:#fff;
+}
+
+
+::-webkit-scrollbar {
+	background: #ddd;
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 10px #00000070;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #3E3A3A;
+	border-radius: 10px;
+}
+
+
+  nav{
+    display: flex;
+    height: 70px;
+    width: 100%;
+    background: #fff;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
+    border-bottom: 2px solid rgba(255,255, 255, 0.2);
+    border-top: 2px solid rgba(255,255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    border-bottom-color:#059041;
+  }
+  @media screen and (min-width: 851px) {
+  nav {
+      width:100;
+    }
+  }
+  @media screen and (max-width: 850px) {
+    nav {
+      width:100%;position: static;
+    }
+  }
+
+  nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+  nav ul li{
+    padding-top:15px;
+    padding-bottom:15px;
+    margin-left: 3vw;
+  }
+  nav ul li a{
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+  }
+
+  nav ul li:hover{
+    background: #059041;
+  }
+  nav .menu-btn i{
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+  }
+
+
+  @media (max-width: 920px) {
+    nav .menu-btn i{
+      display: block;
+    }
+
+    nav ul{
+      position: fixed;
+      top: 80px;
+      left: -300%;
+      background: #111;
+      height: 100vh;
+      width: 100%;
+      text-align: center;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover{
+      background: none;
+    }
+  }
+
+
+
+
+.hovv:hover{color:#fff;}
+
+
+  .popup .overlay {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.7);
+    z-index:1;
+    display:none;
+  }
+
+  .popup .content {
+    position:absolute;
+    top:40%;
+    left:50%;
+    border-radius: 16px;
+    transform:translate(-50%,-50%) scale(0);
+    background:#fff;
+    color:#059041;
+    width:500px;
+    height:350px;
+    z-index:2;
+    text-align:center;
+    padding:20px;
+    box-sizing:border-box;
+    font-family:"Open Sans",sans-serif;
+  }
+
+  .popup .close-btn {
+    cursor:pointer;
+    position:absolute;
+    right:20px;
+    top:20px;
+    width:30px;
+    height:30px;
+    background:#222;
+    color:#fff;
+    font-size:25px;
+    font-weight:600;
+    line-height:30px;
+    text-align:center;
+    border-radius:50%;
+  }
+
+  .popup.active .overlay {
+    display:block;
+  }
+
+  .popup.active .content {
+    transition:all 300ms ease-in-out;
+    transform:translate(-50%,-50%) scale(1);
+  }
+
+  #PopPop {
+    position:absolute;
+    top:2%;
+    left:95%;
+    transform:translate(-98%,-5%);
+    border:none;
+    color:#222;
+    font-family: 'Montserrat', sans-serif;
+    background:#fff;
+    padding:5px 3px;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+
+  }
+  #PopPop:hover{background:#059041;color:#fff;}
+  #a{color:#000;text-decoration: none;}
+
+
+
+
+#Logo{margin-left:30px;}
+
+@media screen and (max-width: 850px) {
+  #Logo {
+    margin-left:0px;
+  }
+}
+
+#WTFF{display:none;height: 40px;width:100%;background:#059041;}
+@media screen and (max-width: 920px) {
+  #WTFF {
+    display: block;
+  }
+  #WTFF a{color:#fff;text-decoration: none;margin-left: 15vw;}
+}
+
+
+#niceMessage{height: 130px;
+width:100%;
+background:#fff;
+color:#000;}
+
+.container p {
+  font-size: 2rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.container p span.typed-text {
+  font-weight: normal;
+  color: #059041;
+}
+.container p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.container p span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #ccc; }
+}
+
+.User{position:absolute;left:17%;top:35%;width:400px;height:450px;background:rgba(0, 0, 0,.7);border-radius:14px;}
+.User p{text-align: center;color:#fff;}
+@media screen and (max-width: 900px) {
+  .User {
+    left:20vw;top:40%;width: 300px;height:325px;
+  }
+}
+
+
+.Therapist{position:absolute;left:57%;top:35%;width:400px;height:450px;background:rgba(0,0,0,.7);border-radius:14px;}
+.Therapist p{text-align: center;color:#fff;}
+
+@media screen and (max-width: 900px) {
+  .Therapist {
+    left:20vw;top:90%;width: 300px;height:325px;
+  }
+}
+
+#FindT{
+  height:50px; width:340px;
+  margin-top:20px;
+  margin-left:30px;
+  border-radius:12px;
+  background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background:#059041;
+	cursor: pointer;
+  font-family:Franklin Gothic Medium;
+  font-weight: normal;
+  font-size: 16px;
+  text-decoration: none;
+  padding:1.2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin-left:14.8%;
+	}
+
+
+#IAmT{
+  margin-top:20px;
+  margin-left:130px;
+  border-radius:12px;
+  background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background:#059041;
+	cursor: pointer;
+  font-family:Franklin Gothic Medium;
+  font-weight: normal;
+  font-size: 14px;
+  text-decoration: none;
+  padding:1.2rem;
+  padding-left: 7rem;
+  padding-right: 7rem;}
+
+#FindT:hover{background:#49E038;transition:0.8s;}
+@media screen and (max-width: 900px) {
+  #FindT {height:35px; width:80px;
+    margin-top:20px;
+    margin-left:30px;
+    border-radius:12px;
+    font-size: 14px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left:17%;
+  }
+}
+
+
+#IAmT{  height:50px; width:340px;
+  margin-top:20px;
+  margin-left:30px;
+  border-radius:12px;
+  background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background:#059041;
+	cursor: pointer;
+  font-family:Franklin Gothic Medium;
+  font-weight: normal;
+  font-size: 16px;
+  text-decoration: none;
+  padding:1.2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin-left:15.5%;
+}
+
+#IAmT:hover{background:#49E038;
+  	transition: 0.8s;}
+
+    @media screen and (max-width: 900px) {
+      #IAmT {height:35px; width:80px;
+        margin-top:20px;
+        margin-left:30px;
+        border-radius:12px;
+        font-size: 14px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-left:18%;
+      }
+    }
+
+
+.randooo{width:100%; height:250px;background:transparent;display: none;}
+@media screen and (max-width: 900px) {
+  .randooo {display: block;
+  }
+}
+
+.DownBlock{width:100%; height:10%; padding-bottom: 0px;background:#49E038;color:#000;display: grid;}
+.DownBlock a{color:#000;margin-bottom: 2%;}
+
+
+#Politique{padding-left:20%;padding-top: 10px;grid-column: 1/2;}
+#Contact{padding-left:27%;padding-top: 10px;grid-column: 2/4;text-decoration: none;}
+#Conditions{padding-left:15%;padding-top: 10px;grid-column: 4/6;}}
+
+
+
+</style>
+
+</head>
+  <body background = "/images/WW11.jpeg">
+    <nav >
+         <img src = "/images/KinemapFullLogo.png" id="Logo" alt = "Logo" onclick="window.location='/home/HomeFr'"
+         style ="width: 144px; height : 50px;" >
+
+         <ul>
+   <li><a class="hovv" href="/home/HomeFr">HOME</a></li>
+   <li><a class="hovv" href="/map/Fr.php">CARTE</a></li>
+   <li><a class="hovv" href="/LogIn/loginFr.php">LOG IN | SIGN UP</a></li>
+
+   </ul>
+
+        <div id="WTF">
+
+        </div>
+
+   </nav>
+
+
+   <div id="WTFF">
+     <a href="/home/HomeFr">HOME</a>
+     <a href="/map/Fr.php">CARTE</a>
+     <a href="/LogIn/loginFr.php">LOG IN | SIGN UP</a>
+   </div>
+
+
+
+    <div class="popup" id="popup-1">
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="close-btn" onclick="togglePopup()">&times;</div>
+        <h1>Selectionez une langue</h1><br><br>
+        <a id="a" href="/home/HomeEn"> English</a><br><br>
+        <a id="a" href="/home/HomeFr"> Français</a><br><br>
+        <a id="a" href="/home/HomeNe"> Nederlands</a><br><br>
+        <a id="a" href="/home/HomeDe"> Deutsch</a>
+      </div>
+    </div>
+
+    <button id="PopPop" onclick="togglePopup()">Langue</button>
+    <script type="text/javascript">
+    function togglePopup(){
+    document.getElementById("popup-1").classList.toggle("active");
+    }
+    </script>
+
+
+
+
+
+
+
+
+    <div id="niceMessage">
+    <div class="container">
+      <p><br>Choisissez VOTRE thérapie: <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+    </div>
+</div>
+
+    <script>
+      const typedTextSpan = document.querySelector(".typed-text");
+  const cursorSpan = document.querySelector(".cursor");
+
+  const textArray = ["Ostéopathie", "Thérapie manuelle", "Pédiatrie", "Gérontologie","Aquatherapie","Crochetage"];
+  const typingDelay = 200;
+  const erasingDelay = 100;
+  const newTextDelay = 2000; // Delay between current and next text
+  let textArrayIndex = 0;
+  let charIndex = 0;
+
+  function type() {
+    if (charIndex < textArray[textArrayIndex].length) {
+      if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+      typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, typingDelay);
+    }
+    else {
+      cursorSpan.classList.remove("typing");
+    	setTimeout(erase, newTextDelay);
+    }
+  }
+
+  function erase() {
+  	if (charIndex > 0) {
+      if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+      typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+      charIndex--;
+      setTimeout(erase, erasingDelay);
+    }
+    else {
+      cursorSpan.classList.remove("typing");
+      textArrayIndex++;
+      if(textArrayIndex>=textArray.length) textArrayIndex=0;
+      setTimeout(type, typingDelay + 1100);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+    if(textArray.length) setTimeout(type, newTextDelay + 250);
+  }); </script>
+
+<div class="User">
+  <a id="FindT" href="/map/mapFr.php">Trouvez un thérapeute</a>
+  <br><br><br><br><br>
+  <p>Votre corps, votre thérapie</p><br><br>
+  <p>Découvrez les soins qui vous entourent</p><br><br>
+  <p>Evidence based therapy</p><br><br>
+  <p>Recevez des soins plus flexibles</p>
+</div>
+<div class="Therapist">
+  <a id="IAmT" href="/LogIn/loginFr.php">Je suis un thérapeute</a>
+  <br><br><br><br><br>
+  <p>Soyez plus visible</p><br><br>
+  <p>Automatisez votre business</p><br><br>
+  <p>Gagnez du temps</p><br><br>
+  <p>Controlez ce qui est public</p><br><br>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="randooo">
+
+</div>
+
+  <div class="DownBlock">
+
+
+
+
+    <a id="Politique" onclick="togglePopup()" > Politique de protection des données à caractère personnel</a>
+
+
+
+    <a id="Contact" href="/source/ContactUs.html">Contact</a>
+
+
+    <a id="Conditions" onclick="togglePopup()">Conditions générales</a>
+
+  </div>
+  </body>
+</html>
