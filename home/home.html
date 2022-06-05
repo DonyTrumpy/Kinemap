@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<link rel="icon" href="../images/logo.png">
+    <title>Kinemap | Home</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+  @viewport{zoom:1;width:extend-to-zoom;}
+  @-ms-viewport{zoom:1;width:extend-to-zoom;}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  color: #C1B846;
+  background-position:center;
+background-repeat:no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    overflow-x: hidden;
+}
+
+
+
+::selection{
+background-color:#49E038;
+color:#fff;
+}
+
+
+::-webkit-scrollbar {
+	background: #ddd;
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 10px #00000070;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #3E3A3A;
+	border-radius: 10px;
+}
+
+
+  nav{
+    display: flex;
+    height: 70px;
+    width: 100%;
+    background: #fff;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
+    border-bottom: 2px solid rgba(255,255, 255, 0.2);
+    border-top: 2px solid rgba(255,255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    border-bottom-color:#059041;z-index:3;
+  }
+  @media screen and (min-width: 851px) {
+  nav {
+      width:100;
+    }
+  }
+  @media screen and (max-width: 850px) {
+    nav {
+      width:100%;position: static;
+    }
+  }
+
+  nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+  nav ul li{
+    padding-top:15px;
+    padding-bottom:15px;
+    margin-left: 3vw;
+  }
+  nav ul li a{
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+  }
+
+  nav ul li:hover{
+    background: #059041;
+  }
+  nav .menu-btn i{
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+  }
+
+
+  @media (max-width: 920px) {
+    nav .menu-btn i{
+      display: block;
+    }
+
+    nav ul{
+      position: fixed;
+      top: 80px;
+      left: -300%;
+      background: #111;
+      height: 100vh;
+      width: 100%;
+      text-align: center;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover{
+      background: none;
+    }
+  }
+
+
+
+
+.hovv:hover{color:#fff;}
+
+
+  .popup .overlay {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.7);
+    z-index:4;
+    display:none;
+  }
+
+  .popup .content {
+    position:absolute;
+    top:40%;
+    left:50%;
+    border-radius: 16px;
+    transform:translate(-50%,-50%) scale(0);
+    background:#fff;
+    color:#059041;
+    width:500px;
+    height:350px;
+    z-index:5;
+    text-align:center;
+    padding:20px;
+    box-sizing:border-box;
+    font-family:"Open Sans",sans-serif;
+  }
+  @media screen and (max-width: 450px) {
+    .popup .content {
+      width:300px;
+      height:450px;
+    }}
+
+
+  .popup .close-btn {
+    cursor:pointer;
+    position:absolute;
+    right:20px;
+    top:20px;
+    width:30px;
+    height:30px;
+    background:#222;
+    color:#fff;
+    font-size:25px;
+    font-weight:600;
+    line-height:30px;
+    text-align:center;
+    border-radius:50%;
+  }
+
+  .popup.active .overlay {
+    display:block;
+  }
+
+  .popup.active .content {
+    transition:all 300ms ease-in-out;
+    transform:translate(-50%,-50%) scale(1);
+  }
+
+
+
+  #PopPop {
+    position:absolute;
+    top:2%;
+    left:95%;
+    transform:translate(-98%,-5%);
+    border:none;
+    color:#222;
+    font-family: 'Montserrat', sans-serif;
+    background:#fff;
+    padding:5px 3px;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    z-index:3;
+  }
+  #PopPop:hover{background:#059041;color:#fff;}
+  #a{color:#000;text-decoration: none;}
+  #a:hover{background:#059041;color:#fff;}
+  @media screen and (max-width: 450px) {
+    #PopPop {
+      margin-top:16px;
+    }
+  }
+
+
+
+#Logo{margin-left:30px;
+width: 140px; height : 60px;}
+
+@media screen and (max-width: 850px) {
+  #Logo {
+    margin-left:0px;
+  }
+}
+@media screen and (max-width: 450px) {
+  #Logo {
+    width: 110px; height:40px;margin-top: 15px;margin-left: -80px;
+  }
+}
+
+#WTFF{display:none;height: 40px;width:100%;background:#059041;}
+@media screen and (max-width: 920px) {
+  #WTFF {
+    display: block;
+  }
+  #WTFF a{color:#fff;text-decoration: none;margin-left: 15vw;}
+}
+@media screen and (max-width: 450px) {
+  #WTFF a {
+    margin-left: 7vw; font-size: 13px;padding-right: 15px;
+  }
+}
+
+
+#niceMessage{height: 130px;
+width:100%;
+background:#fff;
+color:#000;}
+
+@media screen and (max-width:450px) {
+  #niceMessage {
+    height:220px;
+  }
+}
+
+
+.container p {
+  font-size: 2rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.container p span.typed-text {
+  font-weight: normal;
+  color: #059041;
+}
+.container p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.container p span.cursor.typing {
+  animation: none;
+}
+
+
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #ccc; }
+}
+
+
+.center{width:100%;height:850px;background-image: url("../images/WW11.jpg");background-size:cover;z-index:1;background-attachment:fixed;}
+.User{position:absolute;left:17%;top:35%;width:400px;height:450px;background:rgba(0, 0, 0,.7);border-radius:14px;}
+.User p{text-align: center;color:#fff;}
+@media screen and (max-width: 900px) {
+  .User {
+    left:20vw;top:290px;width: 300px;height:325px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .User {
+    left:12vw;top:400px;width: 300px;height:325px;
+  }
+}
+
+
+.Therapist{position:absolute;left:57%;top:35%;width:400px;height:450px;background:rgba(0,0,0,.7);border-radius:14px;}
+.Therapist p{text-align: center;color:#fff;}
+
+@media screen and (max-width: 900px) {
+  .Therapist {
+    left:20vw;top:700px;width: 300px;height:325px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .Therapist {
+    left:12vw;top:800px;width: 300px;height:325px;
+  }
+}
+
+#FindT{
+  height:50px; width:340px;
+  margin-top:20px;
+  margin-left:30px;
+  border-radius:12px;
+  background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background:#059041;
+	cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  padding:1.2rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  margin-left:13.4%;
+	}
+
+
+#IAmT{
+  margin-top:20px;
+  margin-left:130px;
+  border-radius:12px;
+  background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background:#059041;
+	cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+  padding:1.2rem;
+  padding-left: 7rem;
+  padding-right: 7rem;}
+
+#FindT:hover{background:#49E038;transition:0.8s;}
+@media screen and (max-width: 900px) {
+  #FindT {height:35px; width:80px;
+    margin-top:20px;
+    margin-left:30px;
+    border-radius:12px;
+    font-size: 12px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-left:20%;
+  }
+}
+
+
+#IAmT{  height:50px; width:340px;
+  margin-top:20px;
+  margin-left:30px;
+  border-radius:12px;
+  background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background:#059041;
+	cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  padding:1.2rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  margin-left:14%;
+}
+
+#IAmT:hover{background:#49E038;
+  	transition: 0.8s;}
+
+    @media screen and (max-width: 900px) {
+      #IAmT {height:35px; width:80px;
+        margin-top:20px;
+        margin-left:30px;
+        border-radius:12px;
+        font-size: 12px;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        margin-left:20%;
+      }
+    }
+
+
+.randooo{width:100%; height:250px;background:transparent;display: none;}
+
+.Contact{position:relative;height:450px;top:-280px;color:#f0f0f5;background-image: linear-gradient(to bottom,transparent,#ffffff);}
+@media only screen and (max-width: 900px) {
+  .Contact{top:-10px;height:700px;}.Contact #h2{font-size: 24px;}
+  .randooo {display: block;}
+}
+.containerr{
+                position: relative;
+								top:50px;
+                width:80%;
+                margin:5vw;
+                height:600px;
+                display:flex;
+                justify-content: space-between;
+                align-items:center;
+                border-radius: 12px;
+                left: 5vw;
+                background:#059041;
+								box-shadow: 5px 5px 15px #fff;
+            }
+
+            .FormBox{
+                margin:0;
+                padding:0;
+                font-family:sans-serif;
+                box-sizing: border-box;
+                width:50%;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+            }
+
+            form {
+                position:relative;
+                width: 100%;
+                padding: 0 0 0 75px;
+            }
+
+            #h2 {
+                color: #fff;
+                font-weight:500;
+                font-size:2em;
+                text-transform:uppercase;
+                letter-spacing:2px;
+                margin-bottom:40px;
+            }
+
+            .InputBox{
+                position:relative;
+                margin-bottom:40px;
+            }
+
+            #Submit{
+                margin-bottom:0px;
+            }
+
+            input, textarea{
+                position:relative;
+                background:transparent;
+                outline:none;
+                border:none;
+                width: 30vw;
+                color:#fff;
+                padding-bottom:10px;
+                font-size:16px;
+                letter-spacing:1px;
+                font-weight:300;
+                border-bottom:2px solid rgba(255,255,255,0.5);
+                font-family: sans-serif;
+            }
+
+            textarea{
+                height: 100px;
+                width: 40vw;
+            }
+
+            #submittt{
+                padding:8px 20px;
+                margin-top: 10px;
+                width:150px;
+                cursor:pointer;
+                background:#FFBF42;
+                color:#fff;
+                font-size:18px;
+                font-weight:400;
+                border:none;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                border-radius: 15px;
+            }
+
+            #submittt:hover{
+    					transition: 0.3s;filter: brightness(0.87);
+            }
+
+            .spann{
+                position: absolute;
+                left:0;
+                font-size:16px;
+                font-weight: 300;
+                display: inline-block;
+                pointer-events: none;
+                letter-spacing: 1px;
+                color:rgba(255,255,255,0.5);
+                transition: all 0.2s;
+            }
+
+            input:focus~span, textarea:focus~span,
+            input:valid~span, textarea:valid~span{
+                transform: translateY(-24px);
+                color:#fff;
+                font-size:14px;
+            }
+
+            input:focus, textarea:focus,
+            input:valid, textarea:valid{
+                border-bottom-color: #fff;
+            }
+
+            .aa{position: absolute;left:55%;}
+                .ab{position: absolute;left:63%;}
+                .ac{position: absolute;left:71%;}
+
+
+        #success{position: absolute;top:48%;left:60vw;width: 25vw;}
+        #failed{position: absolute;top:48%;left:60vw;}
+
+
+.DownBlock{width:100%; height:10%; padding-bottom: 0px;background:#49E038;color:#000;display: grid;}
+.DownBlock a{color:#000;margin-bottom: 2%;}
+@media screen and (max-width: 450px) {
+  .DownBlock a {font-size: 10px;
+  }
+}
+
+#Politique{padding-left:40%;padding-top: 10px;grid-column: 1/2;text-decoration: none;}
+@media screen and (max-width:1100px) {
+  #Politique {padding-left: 10%;
+  }
+}
+@media screen and (max-width: 450px) {
+  #Politique {padding-left: 5%;
+  }
+}
+
+#Conditions{padding-left:30%;padding-top: 10px;grid-column: 4/6;text-decoration: none;}}
+
+
+</style>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+  <body>
+    <nav >
+         <img src = "../images/KinemapFullLogooo.png" id="Logo" alt = "Logo" onclick="window.location='../'"
+        >
+
+         <ul>
+   <li><a class="hovv" href="../">HOME</a></li>
+   <li><a class="hovv" href="../map/map_fr.php">MAP</a></li>
+   <li><a class="hovv" href="../login/login_fr.php">LOG IN | SIGN UP</a></li>
+
+   </ul>
+
+        <div id="WTF">
+
+        </div>
+
+   </nav>
+
+
+   <div id="WTFF">
+     <br>
+     <a href="../">HOME</a>
+     <a href="../map/map_fr.php">MAP</a>
+     <a href="../login/login_fr.php">LOG IN | SIGN UP</a>
+   </div>
+
+
+
+    <div class="popup" id="popup-1">
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="close-btn" onclick="togglePopup()">&times;</div>
+        <h1>Select a language</h1><br><br>
+        <a id="a" href="../home/home_en.php"> English</a><br><br><br><br>
+        <a id="a" href="../home/home_fr.php"> Français</a><br><br><br><br>
+        <a id="a" href="../home/home_ne.php"> Nederlands</a><br><br><br><br>
+        <a id="a" href="../home/home_de.php"> Deutsch</a>
+      </div>
+    </div>
+
+    <button id="PopPop" onclick="togglePopup()">Language</button>
+    <script type="text/javascript">
+    function togglePopup(){
+    document.getElementById("popup-1").classList.toggle("active");
+    }
+    </script>
+
+
+
+
+
+
+
+
+    <div id="niceMessage">
+    <div class="container">
+      <p><br>Choose YOUR therapy: <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+    </div>
+</div>
+
+    <script>
+      const typedTextSpan = document.querySelector(".typed-text");
+  const cursorSpan = document.querySelector(".cursor");
+
+  const textArray = ["Osteopathy", "Manual therapy", "Pediatry", "Gerontology","Aquatherapy","Crochetage"];
+  const typingDelay = 200;
+  const erasingDelay = 100;
+  const newTextDelay = 2000; // Delay between current and next text
+  let textArrayIndex = 0;
+  let charIndex = 0;
+
+  function type() {
+    if (charIndex < textArray[textArrayIndex].length) {
+      if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+      typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, typingDelay);
+    }
+    else {
+      cursorSpan.classList.remove("typing");
+    	setTimeout(erase, newTextDelay);
+    }
+  }
+
+  function erase() {
+  	if (charIndex > 0) {
+      if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+      typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+      charIndex--;
+      setTimeout(erase, erasingDelay);
+    }
+    else {
+      cursorSpan.classList.remove("typing");
+      textArrayIndex++;
+      if(textArrayIndex>=textArray.length) textArrayIndex=0;
+      setTimeout(type, typingDelay + 1100);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+    if(textArray.length) setTimeout(type, newTextDelay + 250);
+  }); </script>
+
+<div class="center">
+<div class="User">
+  <a id="FindT" href="../map/map_fr.php">Find your therapist</a>
+  <br><br><br><br><br>
+  <p>Your body, your therapy</p><br><br>
+  <p>See which cares are in your area</p><br><br>
+  <p>Easier to implement evidence based therapy</p><br><br>
+  <p>Get more flexible care</p>
+</div>
+<div class="Therapist">
+  <a id="IAmT" href="../login/login_fr.php">I am a therapist</a>
+  <br><br><br><br><br>
+  <p>Get more visibility</p><br><br>
+  <p>Automate your business</p><br><br>
+  <p>Time efficient</p><br><br>
+  <p>Control what is public</p><br><br>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="randooo">
+
+</div>
+</div>
+
+<div class="Contact" id="Contact">
+  <div class="containerr">
+  <div class="FormBox">
+      <form method="post">
+          <h2 id="h2">Contact us</h2>
+          <div class="InputBox">
+              <input type="text" name="name" required="required">
+              <span class="spann">Name</span>
+          </div>
+          <div class="InputBox">
+              <input type="email" name="email" required="required">
+              <span class="spann">Email Address</span>
+          </div>
+          <div class="InputBox">
+              <textarea name="message" required="required"></textarea>
+              <span class="spann">Type your message</span>
+          </div>
+          <div class="InputBox" id="Submit">
+              <input type="submit" id="submittt" value="Send">
+          </div>
+          <?php
+            if(!empty($_POST))
+            {
+                $name = $_POST["name"];
+                $email = $_POST["email"];
+                $message = $_POST["message"];
+                $subject = "Contact";
+                $toEmail = "alexis.ruessmann@gmail.com";
+
+                $mailHeaders = "From: " . $name . "<". $email .">\r\n";
+
+                if (mail($toEmail, $subject, $message, $mailHeaders)) {
+                    echo "<alert id='success'> Thank you for your message, <br><br> we will reach back as soon as possible! </alert>";
+                }
+          else {
+                    echo "<alert id='failed'> Message could not be sent, <br><br> try again and otherwise do not worry<br><br> we are working on it! </alert>";
+                }
+            }
+          ?>
+
+      </form>
+  </div>
+  </div>
+</div>
+
+  <div class="DownBlock">
+    <a id="Politique" href="../source/Politique.php"> Personal data protection policy</a>
+    <a id="Conditions" href="../source/Conditions.php">Terms and conditions</a>
+  </div>
+  </body>
+</html>

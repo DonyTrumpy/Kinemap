@@ -1,0 +1,366 @@
+<?php
+	include 'config.php';
+?>
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<link rel="icon" href="/images/logo.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="favicon.ico">
+
+		<title>Kinemap | Signup</title>
+
+		<script src="js/sweetalert.min.js"></script>
+		<link rel="stylesheet" href="css/sweetalert.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/styleHome.css">
+	</head>
+
+
+	<style>
+
+	@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+	::selection{
+	background-color:#49E038;
+	color:#fff;
+	}
+
+		body, html{
+		height: 100%;
+		width: 100%;
+		background-image: url('/images/WW10.jpg');
+		no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size:cover;
+	}
+
+
+
+
+	#header{
+		width: 100%;
+		height: 52px;
+		background: #fff;
+		border-bottom: 2px solid rgba(255,255, 255, 0.2);
+		border-top: 2px solid rgba(255,255, 255, 0.2);
+		position: sticky;
+		top: 0;
+		border-bottom-color:#059041;
+		font-family: sans-serif;
+	}
+	@media screen and (max-width: 1100px) {
+	#header {
+			position: static;
+		}}
+
+
+
+	#header ul{
+		display: flex;
+		margin:0;
+		padding:0 100px;
+		float:right;
+	}
+	#header ul li {
+		list-style: none;
+	}
+	#header ul li a{
+		display: block;
+		color: #000000;
+		padding: 0 1px;
+		padding-left: 1.5px;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: lighter;
+		font-size: 14px;
+		line-height: 50px;
+	font-family: Montserrat;
+	}
+	#a:hover{
+		background: #059041;
+		color:#fff;
+	}
+	.WTF{width:110px;}
+
+	@media screen and (max-width: 1100px) {
+	#header li {
+			display: none;
+		}}
+
+		.aa{position: absolute;left:55%;}
+		.ab{position: absolute;left:63%;}
+		.ac{position: absolute;left:71%;}
+
+
+
+		.popup .overlay {
+			position:fixed;
+			top:0px;
+			left:0px;
+			width:100vw;
+			height:100vh;
+			background:rgba(0,0,0,0.7);
+			z-index:1;
+			display:none;
+		}
+
+		.popup .content {
+			position:absolute;
+			top:40%;
+			left:50%;
+			border-radius: 16px;
+			transform:translate(-50%,-50%) scale(0);
+			background:#fff;
+			color:#059041;
+			width:500px;
+			height:450px;
+			z-index:2;
+			text-align:center;
+
+			box-sizing:border-box;
+			font-family:"Open Sans",sans-serif;
+		}
+
+		@media screen and (max-width: 1100px) {
+		.popup .content {
+				width:300px;height:420px;
+			}}
+			@media screen and (max-width: 1100px) {
+			.popup .content h1 {
+					font-size: 18px;margin-top:30px;
+				}}
+
+		#a{color:#000;}
+
+		.popup .close-btn {
+			cursor:pointer;
+			position:absolute;
+			right:20px;
+			top:20px;
+			width:30px;
+			height:30px;
+			background:#222;
+			color:#fff;
+			font-size:25px;
+			font-weight:600;
+			line-height:30px;
+			text-align:center;
+			border-radius:50%;
+		}
+		.popup.content a{color:#000;}
+
+		.popup.active .overlay {
+			display:block;
+		}
+
+		.popup.active .content {
+			transition:all 300ms ease-in-out;
+			transform:translate(-50%,-50%) scale(1);
+		}
+
+		#PopPop {
+			position:absolute;
+			top:2.5%;
+			left:95%;
+			transform:translate(-98%,-5%);
+			border:none;
+			color:#222;
+			font-family: 'Montserrat', sans-serif;
+			background:#fff;
+			padding:5px 3px;
+			font-size: 14px;
+			font-weight: 500;
+			padding: 8px 15px;
+			border-radius: 5px;
+			letter-spacing: 1px;
+
+		}
+		#PopPop:hover{background:#059041;color:#fff;}
+
+		@media screen and (max-width: 400px) {
+		#PopPop {
+				margin-top: 8px;
+			}}
+
+
+
+
+
+
+	.Crack{height:40px;width:100%;background:#059041;display: none;font-family: sans-serif;}
+	.Crock{color: #fff;text-decoration: none;font-family: Montserrat;padding-left: 8vw;padding-right: 7vw;}
+	@media screen and (max-width: 1100px) {
+	.Crack {
+			display: block;
+		}}
+		@media screen and (max-width: 400px) {
+		.Crock {
+				font-size: 11px;
+			}}
+
+
+
+
+	button:hover{background:#49E038;}
+
+	#Logo{padding-left: 9%;width: 145px; height : 50px;}
+	@media screen and (max-width: 1100px) {
+	#Logo {
+			padding-left: 5%;width: 110px; height : 40px;margin-top: 6px;
+		}}
+
+
+.container{width:400px;
+height: 600px;
+padding: 40px;
+background: rgba(0,0,0,.8);
+box-sizing: border-box;
+box-shadow: 0 15px 25px rgba(0,0,0,.5);
+border-radius:10px;color:#fff;
+font-family: Montserrat;margin-left: 37%;}
+@media screen and (max-width: 1100px) {
+.container {
+		margin-left: 27%;
+	}}
+	@media screen and (max-width: 700px) {
+	.container {
+			margin-left: 12%;
+		}}
+	@media screen and (max-width: 450px) {
+	.container {
+			margin-left: 5%;
+		}}
+
+
+
+.container h3{margin: 0 0 30px;
+padding: 0;
+color:#fff;
+text-align: center;}
+
+input, textarea{
+  position:relative;
+  background:transparent;
+  outline:none;
+  border:none;
+  width: 250px;;
+  color:#fff;
+  padding-bottom:10px;
+  font-size:16px;
+  letter-spacing:1px;
+  font-weight:300;
+  border-bottom:2px solid rgba(255,255,255,0.5);
+  font-family: sans-serif;
+	margin-left: 30px;
+}
+
+textarea{
+  height: 100px;
+  width: 10vw;
+}
+
+span{
+  position: absolute;
+  left:0;
+  font-size:16px;
+  font-weight: 300;
+  display: inline-block;
+  pointer-events: none;
+  letter-spacing: 1px;
+  color:rgba(255,255,255,0.5);
+  transition: all 0.2s;
+}
+
+
+input:focus~span, textarea:focus~span,
+input:valid~span, textarea:valid~span{
+transform: translateY(-24px);
+color:#C1B846;
+font-size:14px;
+}
+
+
+input:focus, textarea:focus,
+input:valid, textarea:valid{
+  border-bottom-color: #fff;
+}
+
+
+#SignUp{background:#059041;color: #fff;position: absolute;left:45%;top:80%;height:40px;padding-left:68px;
+	border-radius: 16px;border: none;padding-right: 68px;} #SignUp:hover{background:#49E038;transition: 0.8s;}
+
+	</style>
+
+  <body>
+
+
+		<nav id="header">   <img src = "/images/KinemapFullLogo.png" id="Logo" alt = "Logo" onclick="window.location='/home/HomeEn'" > <ul id="ul">
+		 <li id="li"><a id="a" class="aa" href="/home/HomeEn" class="active"> Home </a></li>
+				 <li id="li"><a id="a" class="ab" href="/map/mapEn.php"> Map</a></li>
+					 <li id="li"><a id="a"  class="ac" href="/LogIn/login.php"> Log in | Sign up</a></li>
+					 <div class="WTF">
+
+					 </div>
+	 </ul>
+ </nav>
+
+<div class="Crack">
+ <a class="Crock" href="/home/HomeEn">HOME</a>
+ <a class="Crock" href="/map/mapEn.php">MAP</a>
+ <a class="Crock" href="/LogIn/login.php">LOG IN | SIGN UP</a>
+</div>
+
+<div class="popup" id="popup-1">
+ <div class="overlay"></div>
+ <div class="content">
+	 <div class="close-btn" onclick="togglePopup()">&times;</div>
+	 <h1>Select a language</h1><br><br>
+	 <a id="a" href="/map/mapEn.php"> English</a><br><br>
+	 <a id="a" href="/map/mapFr.php"> Français</a><br><br>
+	 <a id="a" href="/map/mapNe.php"> Nederlands</a><br><br>
+	 <a id="a" href="/map/mapDe.php"> Deutsch</a>
+ </div>
+</div>
+
+<button id="PopPop" onclick="togglePopup()">Language</button>
+<script type="text/javascript">
+function togglePopup(){
+document.getElementById("popup-1").classList.toggle("active");
+}
+</script>
+
+
+
+
+
+
+		<br><br>
+    <div class="container">
+
+		<form class="form-signin" method="post" action="registerUser.php">
+			<h3> Sign Up</h3> <br><br>
+
+			<input type="text" id="stateno" name ="stateno" class="form-control mb-2" placeholder="First Name" required autofocus>
+			<br><br><br>
+			<input type="text" id="fullname" name ="fullname" class="form-control mb-2" placeholder="Family Name" required autofocus>
+		<br>
+			<br><br><br>
+			<input type="text" id="username" name ="username" class="form-control mb-2" placeholder="Username" required autofocus>
+			<br><br><br>
+			<input type="password" id="password" name ="password" class="form-control" placeholder="Password" required> <br><br><br>
+			<button class="btn btn-md btn-primary btn-block" type="submit" id="SignUp" name="submit">Sign up</button>
+		</form>
+
+    </div> <!-- /container -->
+  </body>
+  <script src="/js/jquery.min.js" ></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</html>
